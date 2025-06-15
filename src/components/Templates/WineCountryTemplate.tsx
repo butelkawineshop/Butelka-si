@@ -38,6 +38,7 @@ export default async function WineCountryTemplate({
       depth: '2',
       locale: resolvedLocale,
       fallbackLocale: resolvedLocale === 'en' ? 'sl' : 'en',
+      draft: 'false',
       where: JSON.stringify({
         or: [
           {
@@ -109,7 +110,7 @@ export default async function WineCountryTemplate({
       // Ensure we're using the winecards variant for the slideshow
       return {
         ...mediaItem,
-        url: mediaItem.url?.replace(/\/[^/]+$/, '/winecards') || mediaItem.url,
+        url: mediaItem.url?.replace(/\/[^/]+$/, '/') || mediaItem.url,
       }
     }
     return null
