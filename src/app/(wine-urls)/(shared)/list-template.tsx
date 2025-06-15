@@ -56,7 +56,16 @@ export default async function ListTemplate({
     depth: '2',
     locale: resolvedLocale,
     fallbackLocale: resolvedLocale === 'en' ? 'sl' : 'en',
+    draft: 'false',
+    where: JSON.stringify({
+      _status: {
+        equals: 'published'
+      },
+      ...(_filters || {})
+    })
   })
+
+  console.log('API URL:', `${process.env.NEXT_PUBLIC_API_URL}/api/${collection}?${queryParams.toString()}`)
 
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/${collection}?${queryParams.toString()}`,
@@ -66,6 +75,7 @@ export default async function ListTemplate({
   )
 
   if (!res.ok) {
+    console.error('API Error:', res.status, res.statusText)
     return null
   }
 

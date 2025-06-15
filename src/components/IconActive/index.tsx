@@ -25,7 +25,7 @@ export function IconActive({
       {/* White version - visible by default */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={`/icons/white/${name}.svg`}
+        src={`/icons/Color/${name}.svg`}
         width={width}
         height={height}
         alt={name}
@@ -35,7 +35,7 @@ export function IconActive({
       {/* Color version - hidden by default, visible on hover/active */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={`/icons/color/${name}.svg`}
+        src={`/icons/Color/${name}.svg`}
         width={width}
         height={height}
         alt={name}

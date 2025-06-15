@@ -3,6 +3,8 @@ import 'swiper/css'
 import 'swiper/css/effect-cards'
 import ContentSlideshow from '@/components/ContentSlideshow'
 import type { Slideshow } from '@butelkawineshop/types'
+import { headers } from 'next/headers'
+import type { Locale } from '@/utilities/routeMappings'
 
 type Props = {
   searchParams: {
@@ -11,13 +13,22 @@ type Props = {
 }
 
 export default async function WineList({ searchParams }: Props) {
+  const headersList = await headers()
+  const resolvedLocale = (headersList.get('x-locale') || 'sl') as Locale
+
   const queryParams = new URLSearchParams({
+    depth: '2',
+    locale: resolvedLocale,
+    fallbackLocale: resolvedLocale === 'en' ? 'sl' : 'en',
+    draft: 'false',
     where: JSON.stringify({
       key: {
         equals: 'wine-shop',
       },
-    }),
-    depth: '2',
+      _status: {
+        equals: 'published'
+      }
+    })
   })
 
   const res = await fetch(

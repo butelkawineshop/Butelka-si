@@ -18,7 +18,7 @@ export function IconColor({ name, className, width = 24, height = 24, active = f
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={`/icons/color/${name}.svg`}
+        src={`/icons/Color/${name}.svg`}
         width={width}
         height={height}
         alt={name}
