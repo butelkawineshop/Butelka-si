@@ -1,7 +1,6 @@
 import { headers } from 'next/headers'
 import type { Locale } from '@/utilities/routeMappings'
-import CollectionCards from '@/components/CollectionCards'
-import { getSafeSlug } from '@/utilities/getSafeSlug'
+import WineGrid from '@/components/WineCard/WineGrid'
 
 interface CollectionItem {
   id: string
@@ -22,7 +21,7 @@ export default async function HomePage() {
   const headersList = await headers()
   const resolvedLocale = (headersList.get('x-locale') || 'sl') as Locale
 
-  const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/wines?${new URLSearchParams({
+  const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/wineVariants?${new URLSearchParams({
     depth: '2',
     locale: resolvedLocale,
     fallbackLocale: resolvedLocale === 'en' ? 'sl' : 'en',
@@ -129,20 +128,14 @@ export default async function HomePage() {
           <h2 className="text-3xl font-bold mb-8 text-center">
             {resolvedLocale === 'en' ? 'Latest Wines' : 'Najnovejša vina'}
           </h2>
-          <CollectionCards
-            items={items.map((item: CollectionItem) => ({
-              id: item.id,
-              title: item.title || '',
-              slug: getSafeSlug(item.slug, resolvedLocale),
-              media: item.media?.media
-                ? {
-                    media: Array.isArray(item.media.media) ? item.media.media[0] : item.media.media,
-                  }
-                : null,
-            }))}
-            collection="wines"
+          <WineGrid
+            where={{
+              status: {
+                equals: 'published'
+              },
+            }}
             locale={resolvedLocale}
-            showPagination={false}
+            sort="-createdAt"
           />
         </div>
       </section>
