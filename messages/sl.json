@@ -1,0 +1,518 @@
+{
+  "see-less": "Pokaži manj",
+  "tasting": {
+    "notes": {
+      "titlePage1": "Občutek",
+      "titlePage2": "Značaj",
+      "dry": "Suho",
+      "sweet": "Sladko",
+      "freshFruit": "Sveže sadje",
+      "ripeFruit": "Zrelo sadje",
+      "crisp": "Lahkotno",
+      "creamy": "Kremno",
+      "noOak": "Brez lesa",
+      "oaky": "Barrique",
+      "simple": "Lahkotno",
+      "complex": "Kompleksno",
+      "light": "Nežno",
+      "rich": "Bogato",
+      "austere": "Ostro",
+      "smooth": "Nežno",
+      "mature": "Zrelo",
+      "youthful": "Mladostno",
+      "restrained": "Zadržano",
+      "energetic": "Energično",
+      "noAlcohol": "Brez alkohola",
+      "highAlcohol": "Veliko alkohola"
+    },
+    "descriptions": {
+      "dry": "Od popolnoma suhega do zapeljivo sladkega",
+      "ripe": "Od svežega do zrelega sadja",
+      "creamy": "Od lahkotne do kremne teksture",
+      "oaky": "Od inoxa do izrazite barikiranosti",
+      "complex": "Od lahkotnega do kompleksnega značaja",
+      "light": "Od lahkotnega do bogatega telesa",
+      "smooth": "Od nežnega do ostrega občutka v ustih",
+      "youthful": "Od mladostnega do zrelega značaja",
+      "energetic": "Od zadržanega do energičnega stila",
+      "alcohol": "Od brez alkohola do visokega alkohola"
+    }
+  },
+  "see-more": "Pokaži več",
+  "dark": "Ugasni luči",
+  "light": "Prižgi luči",
+  "system": "Sistemska tema",
+  "theme": "Tema",
+  "language": "Jezik",
+  "settings": "Nastavitve",
+  "login": {
+    "title": "Prijavi se v svoj račun",
+    "magicLink": "Prijava z Magic Linkom",
+    "or": "Prijavi se ali pa",
+    "emailPlaceholder": "Vpiši svoj e-mail.",
+    "facebook": "Prijavi se s svojim Facebook računom.",
+    "google": "Prijavi se s svojim Google računom."
+  },
+  "close": "Zapri",
+  "menu": "Meni",
+  "toTop": "Na vrh",
+  "search": {
+    "placeholder": "Piši pa išči!",
+    "button": "Išči",
+    "search": "Iskanje",
+    "noResults": "Ni najdenih rezultatov",
+    "loading": "Išči lisica...."
+  },
+  "cart": {
+    "title": "Cekar",
+    "empty": "Tvoj cekar je prazen :(",
+    "subtotal": "Vmesni znesek",
+    "shipping": "Dostava",
+    "free": "Brezplačno",
+    "total": "Skupaj",
+    "tax": "22% DDV",
+    "success": "Woohoo!",
+    "save": {
+      "button": "Shrani cekar",
+      "loading": "Shranjevanje..."
+    },
+    "share": {
+      "button": "Deli cekar",
+      "loading": "Deljenje...",
+      "success": "Evo ga!",
+      "modalTitle": "Deli cekar",
+      "nothingToCopy": "Ne morem kopirat!",
+      "shareLinkMissing": "Povezava za deljenje ni na voljo.",
+      "copyButton": "Kopiraj povezavo",
+      "cartShared": "Povezava je kopirana v odložišče. Upam, da dobiš dovoljenje! ;) ",
+      "error": {
+        "noCart": "Nimaš še cekra za deljenje",
+        "failed": "Deljenje cekra ni uspelo. Poskusite znova."
+      }
+    },
+    "checkout": "Spakiramo?",
+    "add": {
+      "success": "Dodano!",
+      "itemAdded": "En korak bližje!",
+      "button": "Dodaj v cekar",
+      "error": "Napaka pri dodajanju izdelka v cekar",
+      "allToCart": "Dodaj vse v cekar"
+    },
+    "clear": {
+      "button": "Izprazni cekar",
+      "cartCleared": "Cekar je izpraznjen",
+      "confirm": {
+        "title": "Izprazni cekar",
+        "description": "Ali ste prepričani, da želite izprazniti cekar? Žeja bo ostala...",
+        "cancel": "Prekliči",
+        "confirm": "Izprazni cekar"
+      },
+      "success": "Cekar je izpraznjen",
+      "error": "Upsi! Nisem mogel izpraznit cekra."
+    },
+    "addShared": {
+      "button": "Dodaj v cekar",
+      "description": "Izberite, kako želite dodati te izdelke v cekar",
+      "addToCurrent": "Dodaj v trenutni cekar",
+      "replaceCurrent": "Zamenjaj trenutni cekar",
+      "cancel": "Prekliči",
+      "loading": "Dodajanje...",
+      "success": {
+        "added": "Izdelki dodani v cekar",
+        "replaced": "Izdelki iz deljenega cekra so zamenjali trenuten cekar"
+      },
+      "error": "Upsi!Dodajanje izdelkov v cekar ni uspelo"
+    },
+    "common": {
+      "error": "Napaka"
+    }
+  },
+  "account": "Račun",
+  "posts": {
+    "title": "Objave"
+  },
+    "butelka": {
+      "title": "Butelka"
+    },
+  "kgb": {
+    "title": "KGB"
+  },
+  "blog": {
+    "title": "Blog"
+  },
+  "tastings": {
+    "title": "Tejstingi"
+  },
+  "wine": {
+    "title": "Vino",
+    "shop": {
+      "title": "Trgovina z vinom",
+      "description": "Odkrijte našo skrbno izbrano zbirko vin iz vsega sveta.",
+      "tips": {
+        "title": "Nasveti za nakup vina",
+        "quality": "Vsako vino skrbno izberemo zaradi njegove izjemne kakovosti in edinstvenega značaja.",
+        "selection": "Naša zbirka sega od klasičnih regij do novih vinorodnih območij.",
+        "experience": "Vsaka steklenica pripoveduje zgodbo - raziskujte našo raznoliko paleto stilov in okusov."
+      },
+      "showcase": {
+        "title": "Uncork your mind",
+        "tagline": "Naj te ta skrbno izbrana vina navdihnejo za naslednje odkritje"
+      }
+    },
+    "detail": {
+      "description": "Zgodba vina",
+      "tastingProfile": "Aromatika",
+      "foodPairing": "S hrano",
+      "tastingNotes": "Okusi me",
+      "save": "Lajkaj",
+      "share": "Deli",
+      "inStock": "Zaloga",
+      "addToCart": "V cekar!",
+      "priceWithVAT": "Cena z DDV",
+      "recommended": "Dej ja",
+      "notRecommended": "Ni treba",
+      "region": "Regija",
+      "country": "Država",
+      "style": "Slog",
+      "alcohol": "Alkoholna stopnja",
+      "temperature": "Temperatura serviranja",
+      "decanter": "Dekantiranje",
+      "relatedWines": "Te lahko malo dražim?",
+      "relatedByWinery": "Bratje & sestre",
+      "relatedByRegion": "Sosedje",
+      "relatedByGrapeVariety": "Bratranci & sestrične",
+      "relatedByPrice": "V istem budgetu",
+      "noRelatedByWinery": "Zgleda sem edinec.",
+      "noRelatedByRegion": "Živim nekje na samem izgleda.",
+      "noRelatedByGrapeVariety": "Edini nimam žlahte.",
+      "noRelatedByPrice": "Unikaten price range - samo zame.",
+      "noValidVariant": "Ni najdene veljavne variante"
+    }
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "about": "O nas",
+    "privacy": "Zasebnost",
+    "terms": "Pogoji",
+    "cookies": "Piškotki",
+    "copyright": "Copyright",
+    "allRightsReserved": "Vse pravice pridržane",
+    "openingHours": "Delovni čas",
+    "search": "Iskanje",
+    "menu": "Meni",
+    "cart": {
+      "title": "Cekar"
+    },
+    "winery": {
+      "title": "Klet"
+    },
+    "wine": {
+      "title": "Vino"
+    },
+    "toTop": "Na vrh"
+  },
+  "navigation": {
+    "moods": "Po filingu",
+    "dishes": "Lačni smo",
+    "styles": "Stili",
+    "regions": "Po regijah",
+    "countries": "Po državah",
+    "wineries": "Naše kleti",
+    "grapeVarieties": "Vse sorte",
+    "collections": "Zbirke",
+    "aromas": "Diši po",
+    "wineshop": "Vinoteka",
+    "climates": "Podnebja",
+    "description": "Opis",
+    "skinColor": "Barva kože",
+    "synonyms": "Sinonimi",
+    "tastingProfile": "Aromatika",
+    "distinctiveAromas": "Izrazito aromatika",
+    "bestRegions": "Najboljše regije",
+    "relatedVarieties": "Sorodne sorte",
+    "styleCompatibleVarieties": "Podobne sorte",
+    "availableVariants": "Razpoložljive variante",
+    "adjective": "Pridevnik",
+    "flavour": "Okus",
+    "instagram": "Instagram",
+    "website": "Spletna stran"
+  },
+  "region": {
+    "whyCool": "Zakaj je nam kul?",
+    "climate": "Podnebja",
+    "priceRange": "Najboljši cenovni razred",
+    "neighboringRegions": "Sosedje",
+    "bestGrapes": "Izrazite sorte",
+    "legendaryWineries": "Ikonične kleti",
+    "winesFrom": "Vina iz regije"
+  },
+  "noMoreWines": "Ni več vin za prikaz",
+  "noWinesFound": "Woopsie! Ni vin tukaj...",
+  "winery": {
+    "winesFrom": "Vina iz kleti",
+    "social": "Kontakt",
+    "website": "Spletna stran",
+    "instagram": "Instagram",
+    "description": "Zgodba kleti",
+    "whyCool": "Zakaj je nam kul?",
+    "tags": "Zbirke",
+    "relatedWineries": "Sestrske kleti",
+    "relatedWines": "Te lahko malo dražim?",
+    "noRelatedByWinery": "Zgleda sem edinec.",
+    "noRelatedByRegion": "Živim nekje na samem zgleda."
+  },
+  "wineCountry": {
+    "winesFrom": "Vina iz države",
+    "bestRegions": "Izrazite regije",
+    "bestGrapes": "Izrazite sorte",
+    "legends": "Ikonične kleti",
+    "description": "Zgodba",
+    "whyCool": "Zakaj je nam kul?",
+    "tags": "Zbirke",
+    "relatedWineries": "Sestrske kleti",
+    "relatedWines": "Te lahko malo dražim?",
+    "noRelatedByWinery": "Zgleda sem edinec.",
+    "noRelatedByRegion": "Živim nekje na samem zgleda.",
+    "wineriesCount": "Vse kleti",
+    "landArea": "Skupna površina vinogradov",
+    "stats": "Statistika"
+  },
+  "grapeVariety": {
+    "whyCool": "Zakaj je nam kul?",
+    "description": "Zgodba",
+    "style": "Tipičen stil",
+    "skin": "Barva kože",
+    "distinctiveAromas": "Izrazite arome",
+    "bestRegions": "Zanimive regije",
+    "blendingPartners": "Partnerji v cuveejih",
+    "similarVarieties": "Sorte podobnega stila",
+    "winesFrom": "Vina iz sorte",
+    "redGrape": "Rdeča",
+    "whiteGrape": "Bela",
+    "synonyms": "Sinonimi"
+  },
+  "climate": {
+    "type": {
+      "desert": "Puščavsko",
+      "maritime": "Obalno",
+      "mediterranean": "Mediteransko",
+      "continental": "Kontinentalno",
+      "alpine": "Alpsko"
+    },
+    "temperature": {
+      "cool": "Hladna",
+      "moderate": "Zmerna",
+      "warm": "Toplo",
+      "hot": "Vroče"
+    },
+    "diurnalRange": {
+      "low": "Nizko",
+      "medium": "Srednje",
+      "high": "Visoko"
+    },
+    "humidity": {
+      "dry": "Suho",
+      "moderate": "Zmerna",
+      "humid": "Vlažno"
+    },
+    "details": "Podrobnosti",
+    "bestRegions": "Izrazite regije",
+    "bestGrapes": "Izrazite sorte",
+    "winesFrom": "Vina tega podnebja",
+    "typeLabel": "Tip podnebja",
+    "temperatureLabel": "Temperaturni razpon",
+    "diurnalRangeLabel": "Dnevno temperaturno nihanje",
+    "humidityLabel": "Vlažnost"
+  },
+  "mood": {
+    "winesFrom": "Vina za ta filing",
+    "description": "Opis"
+  },
+  "food": {
+    "winesFrom": "Vina za to jed"
+  },
+  "aroma": {
+    "winesFrom": "Vina s to aromo"
+  },
+  "style": {
+    "winesFrom": "Vina s tem stilom"
+  },
+  "tag": {
+    "winesFrom": "Vina za to zbirko"
+  },
+  "header": {
+    "search": {
+      "placeholder": "Kaj iščeš?",
+      "button": "Išči",
+      "loading": "Iščem...",
+      "noResults": "Huh, tega pa nimamo...",
+      "viewAllResults": "Ubistvu mam tuki še več idej",
+      "similarWineries": "podobne kleti",
+      "regions": "sosednje regije",
+      "neighboringRegions": "sosednje regije",
+      "similarVarieties": "podobne sorte",
+      "search": "Iskanje",
+      "question": "Kaj te zanima?",
+      "didYouMean": "A misliš na",
+      "orThis": "Al na",
+      "also": "Maš tud"
+    },
+    "wine": {
+      "button": "Vino"
+    },
+    "cart": "Cekar",
+    "account": "Račun"
+  },
+  "sorting": {
+    "createdAt": {
+      "label": "Po friškosti",
+      "asc": "Frišno",
+      "desc": "Ne tak frišno"
+    },
+    "price": {
+      "label": "Po ceni",
+      "asc": "Uffff do djabe",
+      "desc": "Djabe do uffff!"
+    },
+    "name": {
+      "label": "Po vrsti",
+      "asc": "Od A do Ž",
+      "desc": "Od Ž do A"
+    }
+  },
+  "filters": {
+    "aromas": "Arome",
+    "climates": "Podnebja",
+    "foods": "Jedi",
+    "grapeVarieties": "Sorte",
+    "moods": "Filingi",
+    "regions": "Regije",
+    "styles": "Stili",
+    "tags": "Zbirke",
+    "countries": "Države",
+    "wineries": "Kleti",
+    "price": "Kolko si dal?!",
+    "tastingNotes": "Naštimaj brbončice",
+    "apply": "Uporabi filtre",
+    "showMore": "Pokaži več",
+    "showLess": "Pokaži manj",
+    "search": "Išči...",
+    "collections": "Preveč izbire?"
+  },
+  "checkout": {
+    "title": "Blagajna",
+    "processing": "Obdelava...",
+    "continueToPayment": "Nadaljuj na plačilo",
+    "address": {
+      "isBusiness": "Je podjetje",
+      "businessName": "Podjetje",
+      "vatNumber": "Davčna številka",
+      "searchPlaceholder": "Vpiši naslov..."
+    },
+    "paymentMethod": {
+      "title": "Način plačila",
+      "creditCard": "Kreditna kartica",
+      "bankTransfer": "Bančno nakazilo",
+      "payInStore": "Plačilo v trgovini",
+      "paymentDetails": "Podrobnosti o plačilu",
+      "payNow": "Plačaj zdaj"
+    },
+    "auth": {
+      "login": "Prijavi se",
+      "noAccount": "Nimaš računa?",
+      "sendMagicLink": "Pošlji magic link",
+      "email": "E-mail",
+      "emailPlaceholder": "Vpiši svoj e-mail.",
+      "legalConfirmation": "Soglašam s pravnimi pogoji, politiko zasebnosti, piškotki in potrjujem, da sem star več kot 18 let.",
+      "createAccount": "Ustvari račun",
+      "saveAddress": "Shrani naslov"
+    },
+    "shippingAddress": {
+      "title": "Naslov za dostavo",
+      "firstName": "Ime",
+      "lastName": "Priimek",
+      "address1": "Naslov",
+      "address2": "Številka stanovanja, nadstropje, itd.",
+      "city": "Mesto",
+      "postalCode": "Poštna številka",
+      "country": "Država",
+      "phone": "Telefon"
+    },
+    "billingAddress": {
+      "title": "Naslov za račun",
+      "sameAsShipping": "Naslov za račun je enak naslovu za dostavo",
+      "firstName": "Ime",
+      "lastName": "Priimek",
+      "address1": "Naslov",
+      "address2": "Dodatni naslov (neobvezno)",
+      "city": "Mesto",
+      "postalCode": "Poštna številka",
+      "country": "Država",
+      "phone": "Telefon"
+    },
+    "error": {
+      "emptyCart": "Vaš cekar je prazen",
+      "redirectingToHome": "Preusmerjanje na domačo stran...",
+      "failedToLoadCart": "Napaka pri nalaganju cekra",
+      "paymentSystemNotConfigured": "Plačilni sistem ni pravilno nastavljen. Prosimo, kontaktirajte podporo.",
+      "failedToCreateOrder": "Napaka pri ustvarjanju naročila",
+      "checkoutFailed": "Napaka pri plačilu",
+      "unknownError": "Prišlo je do neznane napake",
+      "validationFailed": "Preverite svoje podatke",
+      "pleaseCheckFields": "Nekatera obvezna polja manjkajo ali so neveljavna",
+      "stockUnavailable": "Zaloga ni na voljo",
+      "orderNotFound": "Naročilo ni najdeno",
+      "cartNotFound": "Cekar ni najden",
+      "cartCleared": "Cekar uspešno izčiščen",
+      "cartNotCleared": "Cekar ni izčiščen",
+      "paymentFailed": "Napaka pri plačilu",
+      "paymentSuccessful": "Plačilo uspešno"
+    },
+    "success": {
+      "orderCreated": "Naročilo uspešno ustvarjeno",
+      "redirectingToConfirmation": "Preusmerjanje na potrditev naročila...",
+      "paymentFailed": "Napaka pri plačilu",
+      "paymentSuccessful": "Plačilo uspešno"
+    },
+    "validation": {
+      "required": "To polje je obvezno",
+      "invalidEmail": "Vnesite veljaven e-poštni naslov",
+      "invalidPhone": "Vnesite veljavno telefonsko številko",
+      "invalidPostalCode": "Vnesite veljavno poštno številko"
+    },
+    "summary": {
+      "title": "Povzetek naročila",
+      "subtotal": "Vmesni znesek",
+      "shipping": "Dostava",
+      "tax": "DDV",
+      "total": "Skupaj",
+      "free": "Brezplačna dostava"
+    }
+  },
+  "orderConfirmation": {
+    "title": "Potrditev naročila",
+    "description": "Vaše naročilo je bilo potrjeno",
+    "orderConfirmed": "Naročilo potrjeno!",
+    "thankYou": "Hvala za vaše naročilo. Kmalu vam bomo poslali potrditveno e-pošto.",
+    "orderNumber": "Številka naročila",
+    "orderDate": "Datum naročila",
+    "paymentStatus": "Stanje plačila",
+    "orderStatus": "Stanje naročila",
+    "shippingAddress": "Naslov za dostavo",
+    "orderSummary": "Povzetek naročila",
+    "continueShopping": "Nadaljujte z nakupom",
+    "refreshStatus": "Osveži stanje",
+    "paymentProcessing": "Obdelava plačila",
+    "checkingStatus": "Preverjam stanje...",
+    "status": {
+      "pending": "V čakanju",
+      "processing": "V obdelavi",
+      "shipped": "Poslano",
+      "delivered": "Dostavljeno",
+      "cancelled": "Preklicano",
+      "paid": "Plačano",
+      "failed": "Neuspešno",
+      "refunded": "Vračilo"
+    }
+  }
+}

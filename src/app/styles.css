@@ -1,0 +1,356 @@
+@import "tailwindcss";
+@import url('asap.css');
+@import url('tanker.css');
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-border: hsl(var(--border));
+  --color-other-bg: hsl(var(--other-bg));
+  --color-other-fg: hsl(var(--other-fg));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --gradient-cream: linear-gradient(to right, hsl(var(--gradient-cream-start)), hsl(var(--gradient-cream-end)));
+  --gradient-black: linear-gradient(to right, hsl(var(--gradient-black-start)), hsl(var(--gradient-black-end)));
+  --gradient-primary: linear-gradient(to right, hsl(var(--gradient-primary-start)), hsl(var(--gradient-primary-end)));
+  --gradient-other-cream: linear-gradient(to right, hsl(var(--gradient-other-cream-start)), hsl(var(--gradient-other-cream-end)));
+  --gradient-other-black: linear-gradient(to right, hsl(var(--gradient-other-black-start)), hsl(var(--gradient-other-black-end)));
+  --font-sans: var(--font-asap), sans-serif;
+  --font-accent: var(--font-tanker), sans-serif;
+}
+
+@layer base {
+  :root {
+
+    /* Light mode */
+    --background: 40 30% 98%; /* Cream background */
+    --foreground: 0 0% 0%; /* Black text */
+    --primary: 45 100% 56%; /* Sunny yellow */
+    --primary-foreground: 0 0% 0%; /* Black text on primary */
+    --primary-muted: 45 30% 80%; /* Muted yellow */
+    --card: 45 100% 50%; /* Primary color for header */
+    --card-foreground: 0 0% 0%; /* Black text on card */
+    --border: 40 30% 90%; /* Light cream border */
+    --other-bg: 0 0% 0%; /* Black background (opposite of cream) */
+    --other-fg: 0 0% 100%; /* White text (opposite of black) */
+    --accent: 45 100% 56%;
+    --accent-foreground: 0 0% 0%;
+    
+    /* Light theme gradients */
+    --gradient-cream-start: 40 30% 98%;
+    --gradient-cream-end: 35 40% 95%;
+    --gradient-black-start: 0 0% 0%;
+    --gradient-black-end: 0 0% 10%;
+    --gradient-primary-start: 45 100% 50%;
+    --gradient-primary-end: 40 100% 45%;
+    --gradient-other-cream-start: 0 0% 0%;
+    --gradient-other-cream-end: 0 0% 10%;
+    --gradient-other-black-start: 40 30% 98%;
+    --gradient-other-black-end: 35 40% 95%;
+    --gradient-hero-start: 40 30% 90%;
+    --gradient-hero-end: 35 40% 70%;
+  }
+
+  [data-theme='dark'] {
+
+    /* Dark mode */
+    --background: 0 0% 0%; /* Pure black */
+    --foreground: 0 0% 100%; /* White text */
+    --primary: 45 100% 56%; /* Same sunny yellow */
+    --primary-foreground: 0 0% 0%; /* Black text on primary */
+    --primary-muted: 45 30% 30%; /* Muted yellow */
+    --card: 0 0% 0%; /* Black for header */
+    --card-foreground: 0 0% 100%; /* White text on card */
+    --border: 0 0% 20%; /* Dark border */
+    --other-bg: 40 30% 98%; /* Cream background (opposite of black) */
+    --other-fg: 0 0% 0%; /* Black text (opposite of white) */
+    --accent: 76 100% 46%;
+    --accent-foreground: 0 0% 0%;
+    
+    /* Dark theme gradients */
+    --gradient-cream-start: 0 0% 0%;
+    --gradient-cream-end: 0 0% 10%;
+    --gradient-black-start: 40 30% 98%;
+    --gradient-black-end: 35 40% 95%;
+    --gradient-primary-start: 45 100% 50%;
+    --gradient-primary-end: 40 100% 45%;
+    --gradient-other-cream-start: 40 30% 98%;
+    --gradient-other-cream-end: 35 40% 95%;
+    --gradient-other-black-start: 0 0% 0%;
+    --gradient-other-black-end: 0 0% 10%;
+    --gradient-hero-start: 0 0% 20%;
+    --gradient-hero-end: 0 0% 5%;
+  }
+}
+
+body {
+  @apply min-h-[100vh] flex flex-col bg-background text-foreground overflow-x-hidden;
+}
+
+/* Utility classes for common color patterns */
+.bg-card {
+  @apply bg-card text-card-foreground;
+}
+
+.border-border {
+  @apply border-border;
+}
+
+.divide-border {
+  @apply divide-border;
+}
+
+.text-primary {
+  @apply text-primary;
+}
+
+.bg-primary {
+  @apply bg-primary text-primary-foreground;
+}
+
+.bg-primary-muted {
+  background-color: hsl(var(--primary-muted));
+}
+
+.bg-other {
+  @apply bg-other-bg text-other-fg;
+}
+
+/* Gradient utility classes */
+.bg-gradient-cream {
+  background: var(--gradient-cream);
+}
+
+.bg-gradient-black {
+  background: var(--gradient-black);
+}
+
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.bg-gradient-other-cream {
+  background: var(--gradient-other-cream);
+}
+
+.bg-gradient-other-black {
+  background: var(--gradient-other-black);
+}
+
+/* Icon animations */
+.icon-container {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.icon-container:hover {
+  transform: scale(1.05);
+}
+
+.icon-container:active {
+  transform: scale(0.9);
+}
+/* Link animations */
+.link-container {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.link-container:hover {
+  transform: scale(1.02);
+}
+
+.link-container:active {
+  transform: scale(0.95);
+}
+/* Pill styles */
+.pill {
+  padding: 0.25rem 1rem;
+  border-color: var(--border);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.pill:hover {
+  background-color: var(--hover-color) !important;
+}
+
+.pill-primary {
+  background-color: #FFF0F0;
+  color: #FF6B6B;
+}
+
+.pill-primary:hover {
+  background-color: #FFE8E8;
+}
+
+.pill-secondary {
+  background-color: #FFF4E8;
+  color: #FFA94D;
+}
+
+.pill-secondary:hover {
+  background-color: #FFEED8;
+}
+
+.pill-accent {
+  background-color: #F0FFF0;
+  color: #51CF66;
+}
+
+.pill-accent:hover {
+  background-color: #E8FFE8;
+}
+
+.pill-muted {
+  background-color: #F0F0FF;
+  color: #748FFC;
+}
+
+.pill-muted:hover {
+  background-color: #E8E8FF;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .pill-primary {
+  background-color: #FF6B6B;
+  color: #FFF0F0;
+}
+
+[data-theme='dark'] .pill-primary:hover {
+  background-color: #FF7B7B;
+}
+
+[data-theme='dark'] .pill-secondary {
+  background-color: #FFA94D;
+  color: #FFF4E8;
+}
+
+[data-theme='dark'] .pill-secondary:hover {
+  background-color: #FFB95D;
+}
+
+[data-theme='dark'] .pill-accent {
+  background-color: #51CF66;
+  color: #F0FFF0;
+}
+
+[data-theme='dark'] .pill-accent:hover {
+  background-color: #61DF76;
+}
+
+[data-theme='dark'] .pill-muted {
+  background-color: #748FFC;
+  color: #F0F0FF;
+}
+
+[data-theme='dark'] .pill-muted:hover {
+  background-color: #849FFF;
+}
+
+[data-theme='dark'] .pill-muted:hover {
+  background-color: #849FFF;
+}
+
+@keyframes float-cart {
+  0% {
+    transform: translate(0%, 0) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(150%, -100px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.animate-float-cart {
+  animation: float-cart 0.5s ease-out forwards;
+  z-index: 1000;
+  position: absolute;
+  pointer-events: none;
+}
+
+.bg-gradient-hero {
+  background: linear-gradient(to bottom right, hsl(var(--gradient-hero-start)), hsl(var(--gradient-hero-end)));
+}
+
+[data-theme='light'] .swiper-button-next,
+[data-theme='light'] .swiper-button-prev {
+  color: hsl(var(--foreground));
+}
+
+[data-theme='light'] .swiper-button-next:hover,
+[data-theme='light'] .swiper-button-prev:hover {
+  color: hsl(var(--primary));
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;
+}
+
+[data-theme='dark'] .swiper-button-next,
+[data-theme='dark'] .swiper-button-prev {
+  color: hsl(var(--foreground));
+}
+
+[data-theme='dark'] .swiper-button-next:hover,
+[data-theme='dark'] .swiper-button-prev:hover {
+  color: hsl(var(--primary));
+}
+
+[data-theme='light'] .swiper-pagination-bullet {
+  background: hsl(var(--primary));
+  opacity: 0.5;
+}
+
+[data-theme='light'] .swiper-pagination-bullet-active {
+  background: hsl(var(--primary));
+  opacity: 1;
+}
+
+[data-theme='dark'] .swiper-pagination-bullet {
+  background: hsl(var(--primary));
+  opacity: 0.5;
+}
+
+[data-theme='dark'] .swiper-pagination-bullet-active {
+  background: hsl(var(--primary));
+  opacity: 1;
+}
+
+.swiper-pagination {
+  bottom: 20px !important;
+  z-index: 10;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  transition: all 0.2s ease;
+  background: hsl(var(--primary));
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: hsl(var(--primary));
+  opacity: 1;
+}
+
+.swiper-pagination-bullet:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
