@@ -1,36 +1,7 @@
 import WineFiltersClient from './WineFilters.client'
-import type {
-  Aroma,
-  Climate,
-  Food,
-  GrapeVariety,
-  Mood,
-  Region,
-  Style,
-  Tag,
-  WineCountry,
-  Winery,
-} from '@butelkawineshop/types'
+import type { CollectionItem } from './types'
 
-type CollectionItem = {
-  id: string
-  title: string
-  slug: string
-}
-
-type CollectionDoc =
-  | Aroma
-  | Climate
-  | Food
-  | GrapeVariety
-  | Mood
-  | Region
-  | Style
-  | Tag
-  | WineCountry
-  | Winery
-
-interface Props {
+type Props = {
   currentCollection?: {
     id: string
     type: string
@@ -75,7 +46,7 @@ export default async function WineFilters({ currentCollection }: Props) {
     fetchCollection('wineries'),
   ])
 
-  const mapDocToItem = (doc: CollectionDoc): CollectionItem => ({
+  const mapDocToItem = (doc: any): CollectionItem => ({
     id: doc.id.toString(),
     title: doc.title || '',
     slug: doc.slug || '',

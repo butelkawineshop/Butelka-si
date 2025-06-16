@@ -1,7 +1,7 @@
 import { headers } from 'next/headers'
 import type { Locale } from '@/utilities/routeMappings'
 import CollectionCards from '@/components/CollectionCards'
-import { FilterSortBar } from '@/components/FilterSortBar'
+import FilterSortBar from '@/components/FilterSortBar'
 import { getSafeSlug } from '@/utilities/getSafeSlug'
 import type { Media } from '@butelkawineshop/types'
 
