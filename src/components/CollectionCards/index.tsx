@@ -36,17 +36,13 @@ export default function CollectionCards({
 }: CollectionCardsProps) {
   const swiperRef = useRef<{ swiper: SwiperType }>(null)
 
-  const sortedItems = useMemo(() => {
-    return [...items].sort((a, b) => a.title.localeCompare(b.title))
-  }, [items])
-
-  const grouped = useMemo(() => {
+  // Memoize the sorted items and groups together to avoid multiple recalculations
+  const { sortedItems, grouped } = useMemo(() => {
+    const sorted = [...items].sort((a, b) => a.title.localeCompare(b.title))
     const result: { label: string; items: CollectionItem[] }[] = []
-    const totalItems = sortedItems.length
+    const totalItems = sorted.length
     const maxGroups = 5
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
-
-    // Dynamically determine group size based on item count, but max 5 groups
     const groupSize = Math.ceil(alphabet.length / Math.min(maxGroups, Math.ceil(totalItems / 5)))
 
     for (let i = 0; i < alphabet.length; i += groupSize) {
@@ -56,7 +52,7 @@ export default function CollectionCards({
 
       const label = from === to ? from : `${from}-${to}`
 
-      const groupItems = sortedItems.filter((item) => {
+      const groupItems = sorted.filter((item) => {
         if (!item.slug) return false
         const slugValue = typeof item.slug === 'object' ? item.slug[locale] : item.slug
         if (!slugValue) return false
@@ -67,8 +63,8 @@ export default function CollectionCards({
       if (groupItems.length) result.push({ label, items: groupItems })
     }
 
-    return result
-  }, [sortedItems, locale])
+    return { sortedItems: sorted, grouped: result }
+  }, [items, locale])
 
   const allItems = useMemo(() => grouped.flatMap((g) => g.items), [grouped])
 
@@ -109,7 +105,7 @@ export default function CollectionCards({
                 title={item.title}
                 slug={itemSlug || item.title.toLowerCase().replace(/\s+/g, '-')}
                 language={locale}
-                className="group relative aspect-square  bg-gradient-hero overflow-hidden block h-full"
+                className="group relative aspect-square bg-gradient-hero overflow-hidden block h-full"
               >
                 {item.media?.media &&
                   typeof item.media.media === 'object' &&
@@ -120,10 +116,10 @@ export default function CollectionCards({
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105 opacity-60 group-hover:opacity-100"
                       sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
-                      priority
+                      priority={index < 5}
                     />
                   )}
-                <div className="absolute inset-0  group-hover:bg-black/0 transition-colors duration-300" />
+                <div className="absolute inset-0 group-hover:bg-black/0 transition-colors duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <h3 className="text-center text-lg font-bold text-white p-1 w-full drop-shadow-lg group-hover:scale-115 transition-scale duration-300">
                     {item.title}
@@ -142,7 +138,7 @@ export default function CollectionCards({
           slideToClickedSlide={true}
           slidesPerView={3}
         >
-          <SwiperSlide className="w-full flex flex-row items-center  justify-center text-center">
+          <SwiperSlide className="w-full flex flex-row items-center justify-center text-center">
             {grouped.map((g) => {
               const firstItem = g.items[0]
               if (!firstItem) return null

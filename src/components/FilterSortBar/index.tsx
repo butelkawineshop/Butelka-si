@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import type { Locale } from '@/utilities/routeMappings'
 import WineFilters from '@/components/WineFilters'
@@ -24,9 +24,11 @@ type Props = {
 export function FilterSortBar({ currentCollection, searchParams = {} }: Props) {
   const dispatch = useDispatch()
   const filterState = useSelector((state: RootState) => state.filter)
-  const resolvedLocale: Locale = 'sl' // We'll handle this differently in the client component
+  const resolvedLocale: Locale = 'sl'
 
-  useEffect(() => {
+  const processSearchParams = useCallback(() => {
+    if (!searchParams) return
+
     // Set current collection
     if (currentCollection) {
       dispatch(setCurrentCollection(currentCollection))
@@ -76,7 +78,11 @@ export function FilterSortBar({ currentCollection, searchParams = {} }: Props) {
         dispatch(setSort({ field: value as string, direction }))
       }
     })
-  }, [currentCollection, searchParams, dispatch, filterState.priceRange, filterState.tastingNotes])
+  }, [currentCollection, searchParams, dispatch])
+
+  useEffect(() => {
+    processSearchParams()
+  }, [processSearchParams])
 
   const where = filterToWhere(filterState)
   const sort = getSortString(filterState)
