@@ -1,6 +1,7 @@
 import { headers } from 'next/headers'
 import { getMainNavigationItems } from '@/utilities/wineNavigation'
 import ListNavBar from '@/components/NavigationBars/ListNavBar'
+import { Suspense } from 'react'
 
 export default async function WineLayout({ children }: { children: React.ReactNode }) {
   const headersList = await headers()
@@ -10,11 +11,17 @@ export default async function WineLayout({ children }: { children: React.ReactNo
   const navigationItems = getMainNavigationItems(resolvedLocale)
 
   return (
-    <>
-      <div className="w-full h-full flex flex-col pt-4 bg-background">
-        {navigationItems.length > 0 && <ListNavBar items={navigationItems} />}
+    <div className="w-full h-full flex flex-col bg-background">
+      <div className="w-full h-full flex flex-col pt-4">
+        {navigationItems.length > 0 && (
+          <Suspense fallback={<div className="h-16 w-full animate-pulse bg-primary/10" />}>
+            <ListNavBar items={navigationItems} />
+          </Suspense>
+        )}
       </div>
-      {children}
-    </>
+      <Suspense fallback={<div className="flex-1 w-full animate-pulse bg-primary/5" />}>
+        {children}
+      </Suspense>
+    </div>
   )
 }

@@ -1,8 +1,11 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTranslations } from 'next-intl'
@@ -32,7 +35,6 @@ const navigationOrder = [
 export default function ListNavBar({ items }: ListNavBarProps) {
   const pathname = usePathname()
   const t = useTranslations('navigation')
-  const [isNavigating, setIsNavigating] = useState(false)
 
   const sortedItems = useMemo(() => {
     return [...items].sort((a, b) => {
@@ -46,40 +48,27 @@ export default function ListNavBar({ items }: ListNavBarProps) {
     return sortedItems.findIndex((item) => pathname.startsWith(item.href))
   }, [sortedItems, pathname])
 
-  const handleNavigation = (_href: string) => {
-    if (isNavigating) return
-    setIsNavigating(true)
-    // Reset navigation state after a short delay
-    setTimeout(() => setIsNavigating(false), 500)
-  }
-
   return (
-    <div className="space-y-2 w-full items-center justify-center relative">
+    <div className="w-full relative">
       <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10 pointer-events-none" />
       <Swiper
+        modules={[Navigation, Pagination]}
         centeredSlides={true}
         slideToClickedSlide={true}
         initialSlide={activeIndex}
-        spaceBetween={0}
-        breakpoints={{
-          320: { slidesPerView: 3 },
-          480: { slidesPerView: 3 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 5 },
-          1280: { slidesPerView: 5 },
-        }}
-        className="w-full flex flex-row"
+        spaceBetween={10}
+        slidesPerView="auto"
+        className="w-full"
       >
         {sortedItems.map((item, index) => (
-          <SwiperSlide key={`${item.href}-${index}`} className="w-auto flex flex-row">
+          <SwiperSlide key={`${item.href}-${index}`} className="!w-auto">
             <Link
               href={item.href}
-              onClick={() => handleNavigation(item.href)}
-              className={`group flex flex-row overflow-hidden h-full items-center justify-center text-center ${
+              className={`group flex items-center justify-center text-center px-4 py-2 ${
                 pathname.startsWith(item.href) ? 'text-foreground font-bold' : 'text-foreground/50'
-              } ${isNavigating ? 'pointer-events-none opacity-50' : ''}`}
+              }`}
             >
-              <div className="text-center p-1 px-4 w-full text-3xl font-accent">
+              <div className="text-center text-2xl font-accent whitespace-nowrap">
                 {t(item.title)}
               </div>
             </Link>
