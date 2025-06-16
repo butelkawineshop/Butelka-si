@@ -38,6 +38,8 @@ interface Props {
   }
 }
 
+const ITEMS_PER_PAGE = 20
+
 export default async function ListTemplate({
   collection,
   description,
@@ -46,14 +48,18 @@ export default async function ListTemplate({
 }: Props) {
   const headersList = await headers()
   const resolvedLocale = (headersList.get('x-locale') || 'sl') as Locale
+  
+  const page = Number(searchParams.page) || 1
+  const sort = searchParams.sort as string || 'title'
 
   const queryParams = new URLSearchParams({
     depth: '2',
     locale: resolvedLocale,
     fallbackLocale: resolvedLocale === 'en' ? 'sl' : 'en',
     draft: 'false',
-    limit: '100',
-    page: '1',
+    limit: String(ITEMS_PER_PAGE),
+    page: String(page),
+    sort,
     where: JSON.stringify({
       _status: {
         equals: 'published'
@@ -110,6 +116,9 @@ export default async function ListTemplate({
               collection={collection}
               locale={resolvedLocale}
               showPagination={true}
+              currentPage={page}
+              totalPages={totalPages}
+              totalItems={totalDocs}
             />
           </div>
           <div className="mt-8">

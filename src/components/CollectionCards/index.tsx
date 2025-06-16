@@ -26,6 +26,9 @@ interface CollectionCardsProps {
   collection: string
   locale: Locale
   showPagination?: boolean
+  currentPage?: number
+  totalPages?: number
+  totalItems?: number
 }
 
 export default function CollectionCards({
@@ -33,6 +36,9 @@ export default function CollectionCards({
   collection,
   locale,
   showPagination = false,
+  currentPage = 1,
+  totalPages = 1,
+  totalItems = 0,
 }: CollectionCardsProps) {
   const swiperRef = useRef<{ swiper: SwiperType }>(null)
 
@@ -117,6 +123,7 @@ export default function CollectionCards({
                       className="object-cover transition-transform duration-300 group-hover:scale-105 opacity-60 group-hover:opacity-100"
                       sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
                       priority={index < 5}
+                      loading={index < 5 ? 'eager' : 'lazy'}
                     />
                   )}
                 <div className="absolute inset-0 group-hover:bg-black/0 transition-colors duration-300" />
@@ -131,14 +138,8 @@ export default function CollectionCards({
         })}
       </Swiper>
       {showPagination && (
-        <Swiper
-          className="my-4 flex flex-wrap gap-2 justify-center w-full items-center"
-          centeredSlides={true}
-          spaceBetween={0}
-          slideToClickedSlide={true}
-          slidesPerView={3}
-        >
-          <SwiperSlide className="w-full flex flex-row items-center justify-center text-center">
+        <div className="mt-8 flex flex-col items-center gap-4">
+          <div className="flex flex-wrap gap-2 justify-center w-full items-center">
             {grouped.map((g) => {
               const firstItem = g.items[0]
               if (!firstItem) return null
@@ -158,8 +159,39 @@ export default function CollectionCards({
                 </button>
               )
             })}
-          </SwiperSlide>
-        </Swiper>
+          </div>
+          {totalPages > 1 && (
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => {
+                  const prevPage = currentPage - 1
+                  if (prevPage >= 1) {
+                    window.location.href = `?page=${prevPage}`
+                  }
+                }}
+                disabled={currentPage === 1}
+                className="px-4 py-2 rounded bg-primary text-white disabled:opacity-50"
+              >
+                Previous
+              </button>
+              <span className="text-sm">
+                Page {currentPage} of {totalPages}
+              </span>
+              <button
+                onClick={() => {
+                  const nextPage = currentPage + 1
+                  if (nextPage <= totalPages) {
+                    window.location.href = `?page=${nextPage}`
+                  }
+                }}
+                disabled={currentPage === totalPages}
+                className="px-4 py-2 rounded bg-primary text-white disabled:opacity-50"
+              >
+                Next
+              </button>
+            </div>
+          )}
+        </div>
       )}
     </div>
   )
